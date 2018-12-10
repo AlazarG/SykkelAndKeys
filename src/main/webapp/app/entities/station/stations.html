@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="sykkelAndKeysApp.station.home.title">Stations</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="station.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="sykkelAndKeysApp.station.home.createLabel">
+                        Create new Station
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="title"><span data-translate="sykkelAndKeysApp.station.title">Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="subtitle"><span data-translate="sykkelAndKeysApp.station.subtitle">Subtitle</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numberOfLocks"><span data-translate="sykkelAndKeysApp.station.numberOfLocks">Number Of Locks</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="availability.id"><span data-translate="sykkelAndKeysApp.station.availability">Availability</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="center.id"><span data-translate="sykkelAndKeysApp.station.center">Center</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="station in vm.stations track by station.id">
+                    <td><a ui-sref="station-detail({id:station.id})">{{station.id}}</a></td>
+                    <td>{{station.title}}</td>
+                    <td>{{station.subtitle}}</td>
+                    <td>{{station.numberOfLocks}}</td>
+                    <td>
+                        <a ui-sref="availability-detail({id:station.availability.id})">{{station.availability.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="center-detail({id:station.center.id})">{{station.center.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="station-detail({id:station.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="station.edit({id:station.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="station.delete({id:station.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

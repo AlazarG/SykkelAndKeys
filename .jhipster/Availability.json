@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "bikes",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "locks",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20181210231333",
+    "entityTableName": "availability",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

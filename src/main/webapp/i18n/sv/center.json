@@ -1,0 +1,23 @@
+
+{
+    "sykkelAndKeysApp": {
+        "center" : {
+            "home": {
+                "title": "Centers",
+                "createLabel": "Skapa en ny Center",
+                "createOrEditLabel": "Skapa eller ändra en Center"
+            },
+            "created": "En ny Center är skapad med id {{ param }}",
+            "updated": "En Center är uppdaterad med id  {{ param }}",
+            "deleted": "En Center är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Center {{ id }}?"
+            },
+            "detail": {
+                "title": "Center"
+            },
+            "latitude": "Latitude",
+            "longitude": "Longitude"
+        }
+    }
+}

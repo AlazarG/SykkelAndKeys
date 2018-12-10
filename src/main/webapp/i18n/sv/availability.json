@@ -1,0 +1,23 @@
+
+{
+    "sykkelAndKeysApp": {
+        "availability" : {
+            "home": {
+                "title": "Availabilities",
+                "createLabel": "Skapa en ny Availability",
+                "createOrEditLabel": "Skapa eller ändra en Availability"
+            },
+            "created": "En ny Availability är skapad med id {{ param }}",
+            "updated": "En Availability är uppdaterad med id  {{ param }}",
+            "deleted": "En Availability är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Availability {{ id }}?"
+            },
+            "detail": {
+                "title": "Availability"
+            },
+            "bikes": "Bikes",
+            "locks": "Locks"
+        }
+    }
+}

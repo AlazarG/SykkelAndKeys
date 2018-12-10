@@ -1,0 +1,26 @@
+
+{
+    "sykkelAndKeysApp": {
+        "station" : {
+            "home": {
+                "title": "Stations",
+                "createLabel": "Skapa en ny Station",
+                "createOrEditLabel": "Skapa eller ändra en Station"
+            },
+            "created": "En ny Station är skapad med id {{ param }}",
+            "updated": "En Station är uppdaterad med id  {{ param }}",
+            "deleted": "En Station är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Station {{ id }}?"
+            },
+            "detail": {
+                "title": "Station"
+            },
+            "title": "Title",
+            "subtitle": "Subtitle",
+            "numberOfLocks": "Number Of Locks",
+            "availability": "Availability",
+            "center": "Center"
+        }
+    }
+}

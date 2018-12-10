@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myStationLabel" data-translate="sykkelAndKeysApp.station.home.createOrEditLabel">Create or edit a Station</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.station.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.station.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="sykkelAndKeysApp.station.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.station.title"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="sykkelAndKeysApp.station.subtitle" for="field_subtitle">Subtitle</label>
+            <input type="text" class="form-control" name="subtitle" id="field_subtitle"
+                    ng-model="vm.station.subtitle"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="sykkelAndKeysApp.station.numberOfLocks" for="field_numberOfLocks">Number Of Locks</label>
+            <input type="number" class="form-control" name="numberOfLocks" id="field_numberOfLocks"
+                    ng-model="vm.station.numberOfLocks"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="sykkelAndKeysApp.station.availability" for="field_availability">Availability</label>
+            <select class="form-control" id="field_availability" name="availability" ng-model="vm.station.availability" ng-options="availability as availability.id for availability in vm.availabilities | orderBy:'id' track by availability.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="sykkelAndKeysApp.station.center" for="field_center">Center</label>
+            <select class="form-control" id="field_center" name="center" ng-model="vm.station.center" ng-options="center as center.id for center in vm.centers | orderBy:'id' track by center.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

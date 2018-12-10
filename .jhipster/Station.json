@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "availability",
+            "otherEntityName": "availability",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "station"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "center",
+            "otherEntityName": "center",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "station"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subtitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numberOfLocks",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20181210231332",
+    "entityTableName": "station",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

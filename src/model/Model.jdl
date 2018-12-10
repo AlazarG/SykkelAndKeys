@@ -1,0 +1,37 @@
+entity Station{
+ title String,
+ subtitle String,
+ numberOfLocks Long
+ }
+ 
+ entity Availability{
+ bikes Long,
+ locks Long
+ }
+
+entity Center{
+ latitude Double,
+ longitude Double
+}
+
+relationship OneToOne {
+	Station{availability} to Availability
+}
+
+relationship OneToOne {
+	Station{center} to Center
+}
+
+
+// Set pagination options
+paginate Station with infinite-scroll
+paginate Center, Availability with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

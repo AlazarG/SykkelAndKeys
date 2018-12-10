@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="sykkelAndKeysApp.station.detail.title">Station</span> {{vm.station.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="sykkelAndKeysApp.station.title">Title</span></dt>
+        <dd>
+            <span>{{vm.station.title}}</span>
+        </dd>
+        <dt><span data-translate="sykkelAndKeysApp.station.subtitle">Subtitle</span></dt>
+        <dd>
+            <span>{{vm.station.subtitle}}</span>
+        </dd>
+        <dt><span data-translate="sykkelAndKeysApp.station.numberOfLocks">Number Of Locks</span></dt>
+        <dd>
+            <span>{{vm.station.numberOfLocks}}</span>
+        </dd>
+        <dt><span data-translate="sykkelAndKeysApp.station.availability">Availability</span></dt>
+        <dd>
+            <a ui-sref="availability-detail({id:vm.station.availability.id})">{{vm.station.availability.id}}</a>
+        </dd>
+        <dt><span data-translate="sykkelAndKeysApp.station.center">Center</span></dt>
+        <dd>
+            <a ui-sref="center-detail({id:vm.station.center.id})">{{vm.station.center.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="station-detail.edit({id:vm.station.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
